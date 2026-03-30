@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.publishing
+
 plugins {
     alias(libs.plugins.android.library)
 }
@@ -31,6 +33,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
+
+group = "https://github.com/rdunndev/TimeTrackerSDK"
+version = "1.0.6"
 
 dependencies {
     implementation(libs.appcompat.v7)
