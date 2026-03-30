@@ -34,8 +34,8 @@ android {
     }
 }
 
-group = "https://github.com/rdunndev/TimeTrackerSDK"
-version = "1.0.6"
+group = "com.github.rdunndev"
+version = "1.0.7"
 
 dependencies {
     implementation(libs.appcompat.v7)
