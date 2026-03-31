@@ -36,7 +36,7 @@ android {
 }
 
 group = "com.github.rdunndev"
-version = "1.0.9"
+version = "1.0.10"
 
 dependencies {
     implementation(libs.appcompat.v7)

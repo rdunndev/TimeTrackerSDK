@@ -4,3 +4,17 @@ plugins {
     alias(libs.plugins.android.library) apply false
     `maven-publish`
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.rdunndev"
+            artifactId = "timetracker"
+            version = "1.0.10"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
