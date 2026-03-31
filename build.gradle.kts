@@ -2,19 +2,6 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
+    `java-library`
     `maven-publish`
-}
-
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.rdunndev"
-            artifactId = "timetracker"
-            version = "1.0.10"
-
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
-    }
 }

@@ -36,7 +36,28 @@ android {
 }
 
 group = "com.github.rdunndev"
-version = "1.0.10"
+version = "1.0.11"
+
+publishing {
+    publications {
+        create<MavenPublication>("ReleaseAar") {
+            groupId = "com.rdunndev"
+            artifactId = "timetracker"
+            version = "1.0.11"
+            afterEvaluate {
+                artifact(tasks.getByName("bundleReleaseAar"))
+            }
+        }
+    }
+
+
+    repositories {
+        maven {
+            name = "timetracker"
+            url = uri(layout.buildDirectory.dir("repo"))
+        }
+    }
+}
 
 dependencies {
     implementation(libs.appcompat.v7)
