@@ -2,6 +2,7 @@ import org.gradle.kotlin.dsl.publishing
 
 plugins {
     alias(libs.plugins.android.library)
+    `maven-publish`
 }
 
 android {
@@ -35,7 +36,7 @@ android {
 }
 
 group = "com.github.rdunndev"
-version = "1.0.8"
+version = "1.0.9"
 
 dependencies {
     implementation(libs.appcompat.v7)
