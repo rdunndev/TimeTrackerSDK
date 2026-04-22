@@ -36,14 +36,14 @@ android {
 }
 
 group = "com.github.rdunndev"
-version = "1.0.12"
+version = "1.0.13"
 
 publishing {
     publications {
         create<MavenPublication>("ReleaseAar") {
             groupId = "com.rdunndev"
             artifactId = "timetracker"
-            version = "1.0.12"
+            version = "1.0.13"
             afterEvaluate {
                 artifact(tasks.getByName("bundleReleaseAar"))
             }
