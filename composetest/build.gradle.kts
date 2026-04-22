@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.publishing
+
 plugins {
     alias(libs.plugins.android.library)
     `maven-publish`
@@ -35,7 +37,7 @@ version = "1.0.12"
 publishing {
     publications {
         create<MavenPublication>("ReleaseAar") {
-            groupId = "com.github.rdunndev"
+            groupId = "com.rdunndev"
             artifactId = "composetest"
             version = "1.0.12"
             afterEvaluate {
