@@ -46,7 +46,7 @@ publishing {
 
     repositories {
         maven {
-            name = "timetracker"
+            name = "composetest"
             url = uri(layout.buildDirectory.dir("repo"))
         }
     }
