@@ -26,3 +26,4 @@ dependencyResolutionManagement {
 rootProject.name = "TimeTrackerSDK"
 include(":app")
 include(":timetracker")
+include(":composetest")

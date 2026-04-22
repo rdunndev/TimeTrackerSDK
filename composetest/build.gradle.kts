@@ -1,12 +1,10 @@
-import org.gradle.kotlin.dsl.publishing
-
 plugins {
     alias(libs.plugins.android.library)
     `maven-publish`
 }
 
 android {
-    namespace = "com.rdunndev.timetracker"
+    namespace = "com.rdunndev.composetest"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -16,22 +14,18 @@ android {
     defaultConfig {
         minSdk = 24
 
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10" // Replace with your Compose compiler version
     }
 }
 
@@ -41,15 +35,14 @@ version = "1.0.12"
 publishing {
     publications {
         create<MavenPublication>("ReleaseAar") {
-            groupId = "com.rdunndev"
-            artifactId = "timetracker"
+            groupId = "com.github.rdunndev"
+            artifactId = "composetest"
             version = "1.0.12"
             afterEvaluate {
                 artifact(tasks.getByName("bundleReleaseAar"))
             }
         }
     }
-
 
     repositories {
         maven {
@@ -60,8 +53,13 @@ publishing {
 }
 
 dependencies {
-    implementation(libs.appcompat.v7)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.runtime)
+    implementation(libs.material)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.runner)
-    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+
+    implementation(libs.androidx.material3)
 }
