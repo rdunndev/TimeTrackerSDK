@@ -34,14 +34,14 @@ android {
 }
 
 group = "com.github.rdunndev"
-version = "1.0.13"
+version = "1.0.14"
 
 publishing {
     publications {
         create<MavenPublication>("ReleaseAar") {
             groupId = "com.rdunndev"
             artifactId = "composetest"
-            version = "1.0.13"
+            version = "1.0.14"
             afterEvaluate {
                 artifact(tasks.getByName("bundleReleaseAar"))
             }
