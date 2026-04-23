@@ -2,6 +2,7 @@ import org.gradle.kotlin.dsl.publishing
 
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.compose.compiler)
     `maven-publish`
 }
 
@@ -26,6 +27,7 @@ android {
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.10" // Replace with your Compose compiler version
     }
@@ -55,6 +57,7 @@ publishing {
 }
 
 dependencies {
+    implementation(libs.org.jetbrains.kotlin.plugin.compose.gradle.plugin)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.runtime)
