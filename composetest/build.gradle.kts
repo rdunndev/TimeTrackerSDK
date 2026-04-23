@@ -57,7 +57,7 @@ publishing {
 }
 
 dependencies {
-    implementation(libs.org.jetbrains.kotlin.plugin.compose.gradle.plugin)
+//    implementation(libs.org.jetbrains.kotlin.plugin.compose.gradle.plugin)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.runtime)
